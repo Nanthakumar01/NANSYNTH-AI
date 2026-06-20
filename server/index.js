@@ -2,6 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
+const Question = require('./models/Question');
+const Problem = require('./models/Problem');
 
 dotenv.config();
 
@@ -35,8 +37,7 @@ app.get('/', (req, res) => {
 });
 app.get('/seed', async (req, res) => {
   try {
-    const questions = require('./questions.json');
-    const problems = require('./codingproblems.json');
+
 
     await Question.deleteMany({});
     await Problem.deleteMany({});
