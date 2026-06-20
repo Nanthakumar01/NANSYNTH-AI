@@ -37,7 +37,8 @@ app.get('/', (req, res) => {
 });
 app.get('/seed', async (req, res) => {
   try {
-
+    const questions = require('./questions.json');
+    const problems = require('./codingproblems.json');
 
     await Question.deleteMany({});
     await Problem.deleteMany({});
