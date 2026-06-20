@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { NotificationProvider } from './context/NotificationContext';
@@ -13,15 +13,32 @@ import Editor from './pages/Editor';
 import Resume from './pages/Resume';
 import Interview from './pages/Interview';
 import Leaderboard from './pages/Leaderboard';
+import React, { useState } from 'react';
+import { Menu } from 'lucide-react';
 
-const MainLayout = ({ children }) => (
+const MainLayout = ({ children }) => {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  return (
     <div className="layout-wrapper">
-        <Sidebar />
-        <main className="main-content">
-            {children}
-        </main>
+      <button
+        className="mobile-menu-btn"
+        onClick={() => setSidebarOpen(!sidebarOpen)}
+      >
+        <Menu size={24} />
+      </button>
+
+      <Sidebar
+        sidebarOpen={sidebarOpen}
+        setSidebarOpen={setSidebarOpen}
+      />
+
+      <main className="main-content">
+        {children}
+      </main>
     </div>
-);
+  );
+};
 
 const PrivateRoute = ({ children }) => {
     const { token, loading } = useAuth();
