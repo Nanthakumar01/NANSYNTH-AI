@@ -16,10 +16,17 @@ const problemSchema = new mongoose.Schema({
         default: 'Easy'
     },
     category: {
-        type: String,
-        required: true,
-        enum: ['Arrays', 'Strings', 'Linked Lists', 'Stacks', 'Queues', 'Trees', 'Algorithms']
-    },
+    type: String,
+    required: true,
+    enum: [
+        'Arrays',
+        'Strings',
+        'Linked List',
+        'Stack',
+        'Trees',
+        'Algorithms'
+    ]
+},
     constraints: [String],
     inputFormat: String,
     outputFormat: String,
