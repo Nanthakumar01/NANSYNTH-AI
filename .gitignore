@@ -1,0 +1,8 @@
+node_modules
+.env
+dist
+build
+.mongodb
+.vscode
+mongodb-bin
+db
