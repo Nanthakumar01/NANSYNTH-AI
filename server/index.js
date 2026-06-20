@@ -35,22 +35,7 @@ app.use('/api/dashboard', dashboardRoutes);
 app.get('/', (req, res) => {
     res.send('PrepForge AI Backend is running...');
 });
-app.get('/seed', async (req, res) => {
-  try {
-    const questions = require('./questions.json');
-    const problems = require('./codingproblems.json');
 
-    await Question.deleteMany({});
-    await Problem.deleteMany({});
-
-    await Question.insertMany(questions);
-    await Problem.insertMany(problems);
-
-    res.send('Database Seeded Successfully');
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
 
 // Database Connection
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/prepforge')
