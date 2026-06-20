@@ -19,7 +19,7 @@ const Editor = () => {
 
     const fetchProblem = async () => {
         try {
-            const res = await axios.get(`http://localhost:5000/api/coding/${id}`);
+            const res = await axios.get(`https://nansynth-ai.onrender.com/api/coding/${id}`);
             setProblem(res.data);
             setCode(`// Write your solution here\nfunction solution() {\n  \n}`);
             setLoading(false);
@@ -33,7 +33,7 @@ const Editor = () => {
     try {
 
         const res = await axios.post(
-            'http://localhost:5000/api/coding/submit',
+            'https://nansynth-ai.onrender.com/api/coding/submit',
             {
                 code,
                 language,
@@ -67,7 +67,7 @@ const Editor = () => {
         setOutput('Running code...');
 
         const res = await axios.post(
-    'http://localhost:5000/api/coding/run',
+    'https://nansynth-ai.onrender.com/api/coding/run',
     {
         code,
         language

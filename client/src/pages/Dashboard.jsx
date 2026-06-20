@@ -61,7 +61,7 @@ const Dashboard = () => {
     const fetchDashboardStats = async () => {
         try {
             const res = await axios.get(
-                'http://localhost:5000/api/dashboard/stats'
+                'https://nansynth-ai.onrender.com/api/dashboard/stats'
             );
 
             setStats(res.data);

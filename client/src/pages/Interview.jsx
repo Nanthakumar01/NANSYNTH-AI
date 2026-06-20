@@ -25,7 +25,7 @@ const Interview = () => {
 
     const fetchHistory = async () => {
         try {
-            const res = await axios.get('http://localhost:5000/api/interview/history');
+            const res = await axios.get('https://nansynth-ai.onrender.com/api/interview/history');
             setHistory(res.data);
         } catch (err) {
             console.error(err);
@@ -35,7 +35,7 @@ const Interview = () => {
     const handleGenerate = async () => {
         setGenerating(true);
         try {
-            const res = await axios.post('http://localhost:5000/api/interview/generate', { role });
+            const res = await axios.post('https://nansynth-ai.onrender.com/api/interview/generate', { role });
             setSession(res.data);
             fetchHistory();
         } catch (err) {

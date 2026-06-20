@@ -28,7 +28,7 @@ const Quiz = () => {
 
     const fetchQuestions = async () => {
         try {
-            const res = await axios.get(`http://localhost:5000/api/aptitude/quiz/${category}`);
+            const res = await axios.get(`https://nansynth-ai.onrender.com/api/aptitude/quiz/${category}`);
             setQuestions(res.data);
             setLoading(false);
         } catch (err) {

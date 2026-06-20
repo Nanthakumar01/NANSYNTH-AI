@@ -15,7 +15,7 @@ const Resume = () => {
 
     const fetchHistory = async () => {
         try {
-            const res = await axios.get('http://localhost:5000/api/resume/history');
+            const res = await axios.get('https://nansynth-ai.onrender.com/api/resume/history');
             setHistory(res.data);
         } catch (err) {
             console.error(err);
@@ -37,7 +37,7 @@ const Resume = () => {
         formData.append('resume', file);
 
         try {
-            const res = await axios.post('http://localhost:5000/api/resume/analyze', formData);
+            const res = await axios.post('https://nansynth-ai.onrender.com/api/resume/analyze', formData);
             setAnalysis(res.data);
             fetchHistory();
         } catch (err) {

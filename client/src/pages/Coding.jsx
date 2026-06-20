@@ -15,7 +15,7 @@ const Coding = () => {
 
     const fetchProblems = async () => {
         try {
-            const res = await axios.get('http://localhost:5000/api/coding');
+            const res = await axios.get('https://nansynth-ai.onrender.com/api/coding');
             setProblems(res.data);
         } catch (err) {
             console.error(err);

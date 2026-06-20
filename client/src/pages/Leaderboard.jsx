@@ -12,7 +12,7 @@ const Leaderboard = () => {
 
     const fetchLeaderboard = async () => {
         try {
-            const res = await axios.get('http://localhost:5000/api/analytics/leaderboard');
+            const res = await axios.get('https://nansynth-ai.onrender.com/api/analytics/leaderboard');
             setStudents(res.data);
         } catch (err) {
             console.error(err);
